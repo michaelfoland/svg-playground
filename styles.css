@@ -1,0 +1,126 @@
+
+
+body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* background: lightgreen; */
+  width: 100vw;
+  height: 100vh;
+}
+
+#control-panel {
+  background: #ccf;
+}
+
+#svg-image {
+  background: #fff;
+}
+
+#svg-markup {
+  background: #cfc;
+}
+
+#buttons {
+  background: #ccc;
+}
+
+@media (min-width: 600px) and (min-height: 600px) {
+  body {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "control image"
+      "control markup";
+  }
+  
+  #control-panel {
+    grid-area: control;
+  }
+
+  #svg-image {
+    grid-area: image;
+  }
+
+  #svg-markup {
+    grid-area: markup;
+  }
+  
+  #buttons {
+    display: none;
+  }
+}
+
+
+@media (max-width: 599px) and (min-height: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  #buttons {
+    display: block; /* maybe change later */
+    flex-grow: 0;
+  }
+  
+  #control-panel {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  #svg-image, #svg-markup {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-height: 599px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      "control buttons"
+      "control svg";
+  }
+  
+  #control-panel {
+    grid-area: control;
+  }
+  
+  #buttons {
+    grid-area: buttons;
+  }
+  
+  #svg-image, #svg-markup {
+    grid-area: svg;
+  }
+  
+  #svg-markup {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) and (max-height: 599px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  
+  #buttons, #control-panel {
+    display: block;
+  }
+  
+  #control-panel {
+    flex-grow: 1;
+  }
+  
+  #svg-image, #svg-markup {
+    display: none;
+  }
+}
