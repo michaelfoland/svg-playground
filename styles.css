@@ -1,6 +1,10 @@
-
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
 
 body {
+  cursor: default;
   border: 0;
   padding: 0;
   margin: 0;
@@ -8,10 +12,15 @@ body {
   /* background: lightgreen; */
   width: 100vw;
   height: 100vh;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 #control-panel {
   background: #ccf;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch; /* perhaps change */
 }
 
 #svg-image {
@@ -24,6 +33,28 @@ body {
 
 #buttons {
   background: #ccc;
+}
+
+.simple-object {
+  background: #bbf;
+  color: #004;
+}
+
+.simple-object--active > .simple-object__attribute-group {
+  display: block;
+}
+
+.simple-object__title {
+  padding: .2em 0 .2em .5em;
+  cursor: pointer;
+}
+
+.simple-object__attribute-group {
+  display: none;
+}
+
+.simple-object--expand {
+  
 }
 
 @media (min-width: 600px) and (min-height: 600px) {
